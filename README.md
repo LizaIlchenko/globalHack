@@ -10,21 +10,4 @@
 
 #### Код:
 ```python
-import pandas as pd # Импортирование библиотеки пандас, для работы с табличными данными
-from scipy.interpolate import interp1d # Импортирование функции для интерполяции данных
-def main(points, task, output): # Создание функции с двумя аргументами
-    # Загружаем данные
-    p = pd.read_csv(points)
-    t = pd.read_csv(task)
-    # Извлекаем данные в виде массивов 
-    x = p['x'].values
-    y = p['y'].values
-    # Используется функция interp1d для создания интерполяционной функции на основе известных точек
-    interp = interp1d(x, y, kind='cubic', fill_value="extrapolate")
-    # Вычисление значений для у
-    t['y'] = interp(t['x'])
-    # Сохранение результатов 
-    t[['x', 'y']].to_csv(output, index=False)
-# Вызываем функцию и загружаем аргументы
-main('points.csv', 'task.csv', 'results.csv')
 
