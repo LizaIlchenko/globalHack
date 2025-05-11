@@ -75,5 +75,6 @@ def main(points, task, out):
     plt.title('График полиномиальной аппроксимации функции')
     plt.legend()
     plt.show()
-main('points.csv', 'task.csv', 'p_results.csv')```
+main('points.csv', 'task.csv', 'p_results.csv')
+```
 
